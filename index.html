@@ -5,6 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <title>ChemTest</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<!-- PWA -->
+<link rel="manifest" href="/ChemTest369/manifest.json">
+<meta name="theme-color" content="#0a0f1e">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ChemTest">
+<link rel="apple-touch-icon" href="/ChemTest369/icon-192.png">
+<meta name="application-name" content="ChemTest">
+<meta name="msapplication-TileColor" content="#3b82f6">
 <style>
   :root {
     --bg: #0a0f1e;
@@ -2015,6 +2025,16 @@ function showScreen(id) {
 // INIT
 // ===========================
 renderHistory();
+</script>
+<!-- PWA Service Worker -->
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/ChemTest369/pwabuilder-sw.js')
+        .then(reg => console.log('Service Worker зарегистрирован'))
+        .catch(err => console.log('Ошибка Service Worker:', err));
+    });
+  }
 </script>
 </body>
 </html>
