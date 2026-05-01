@@ -2,8 +2,8 @@
   "name": "ChemTest - Тесты по химии",
   "short_name": "ChemTest",
   "description": "Интерактивные тесты по химии для 10 класса. 689 вопросов, 3 типа заданий",
-  "start_url": "index.html",
-  "scope": ".",
+  "start_url": "/ChemTest369/",
+  "scope": "/ChemTest369/",
   "display": "standalone",
   "orientation": "portrait",
   "background_color": "#0a0f1e",
@@ -23,6 +23,10 @@
       "purpose": "any maskable"
     }
   ],
-  "categories": ["education", "productivity"],
-  "prefer_related_applications": false
+  "categories": [
+    "education",
+    "productivity"
+  ],
+  "prefer_related_applications": false,
+  "id": "/ChemTest369-v1"
 }
