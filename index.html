@@ -1935,7 +1935,7 @@ function showReview() {
         cls = allCorrect ? 'r-correct' : 'r-wrong';
         icon = allCorrect ? '✓' : '✗';
         yourAns = ans.selected.join('-');
-        corrAns = q.pairs.join('-');
+        corrAns = q.pairs.map(p => p + 1).join('-');
       } else {
         const correct = String(ans.selected).trim().replace(',', '.') === String(q.ans).trim().replace(',', '.');
         cls = correct ? 'r-correct' : 'r-wrong';
@@ -1944,11 +1944,12 @@ function showReview() {
         corrAns = q.ans;
       }
     }
+    const questionText = q.text || q.q || '';
     const div = document.createElement('div');
     div.className = `review-item ${cls}`;
     div.innerHTML = `
       <div class="review-qnum">Савол ${i + 1} ${icon}</div>
-      <div class="review-qtext">${(q.text || q.q).substring(0, 100)}${(q.text || q.q).length > 100 ? '...' : ''}</div>
+      <div class="review-qtext">${questionText.substring(0, 100)}${questionText.length > 100 ? '...' : ''}</div>
       <div class="review-answer-row">
         <span class="review-your">Шумо: ${yourAns}</span>
         <span class="review-correct">Дуруст: ${corrAns || yourAns}</span>
