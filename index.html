@@ -1948,7 +1948,7 @@ function showReview() {
     div.className = `review-item ${cls}`;
     div.innerHTML = `
       <div class="review-qnum">Савол ${i + 1} ${icon}</div>
-      <div class="review-qtext">${q.q.substring(0, 100)}${q.q.length > 100 ? '...' : ''}</div>
+      <div class="review-qtext">${(q.text || q.q).substring(0, 100)}${(q.text || q.q).length > 100 ? '...' : ''}</div>
       <div class="review-answer-row">
         <span class="review-your">Шумо: ${yourAns}</span>
         <span class="review-correct">Дуруст: ${corrAns || yourAns}</span>
